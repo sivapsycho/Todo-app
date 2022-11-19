@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/1eceefd399.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function todo(){
+			let newTodo=document.getElementById("newTodo").value
+				console.log(newTodo)
+				document.getElementById("newTodo").value=""
+				if(newTodo===""){
+					alert("enter todo")
+				}
+				else{
+				addTodo(newTodo)}
+		}
+		function addTodo(newvalue){
+			let ul=document.querySelector("ul")
+			    console.log(ul)
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitem">${newvalue}</span>
+			<i class="fa-regular fa-circle-xmark"></i>`
+			li.classList.add()
+			ul.appendChild(li)
+		}
+	</script>
+	<style type="text/css">
+		body{
+			background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTziquU7W2VTHdkaKwI2dSHA73sSz37bkhwpA&usqp=CAU);
+			background-size: cover;
+		}
+		#newTodo{
+			padding: .7%;
+			border: double;
+			border-color: red;
+			background-color:lightgrey;
+		}
+		#btn{
+			padding: .2%;
+			border: double;
+			border-color: black;
+			border-radius:35%;
+		}
+		.list-type{
+			list-style: none;
+		}
+		.listitem{
+			font-size: 1.7rem;
+		}
+		
+	</style>
+</head>
+<body><center>
+	<p><input id="newTodo" placeholder="username"/></p>
+	<ul>
+	</ul>
+	<button id="btn"onclick="todo()">submit</button></center>
+
+</body>
+</html>
